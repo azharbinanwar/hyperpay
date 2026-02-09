@@ -17,11 +17,12 @@ class PaymentConst {
 }
 
 /// This class contains constants representing various payment brands,
-/// such as mada, applePay, googlePay, credit, stcPay, masterCard, and visa.
+/// such as mada, applePay, googlePay, samsungPay, credit, stcPay, masterCard, and visa.
 class PaymentBrands {
   static const String mada = "MADA";
   static const String applePay = "APPLEPAY";
   static const String googlePay = "GOOGLEPAY";
+  static const String samsungPay = "SAMSUNGPAY";
   static const String credit = "credit";
   static const String stcPay = "STC_PAY";
   static const String masterCard = "MASTERCARD";
