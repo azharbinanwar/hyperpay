@@ -42,6 +42,7 @@ import com.google.android.gms.wallet.PaymentData;
 import com.google.android.gms.wallet.PaymentDataRequest;
 import com.google.android.gms.wallet.PaymentsClient;
 import android.net.Uri;
+import androidx.browser.customtabs.CustomTabsIntent;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
@@ -665,10 +666,9 @@ public class PaymentPlugin  implements
     if (transaction.getTransactionType() == TransactionType.SYNC) {
       success("SYNC");
     } else {
-      /* wait for the callback in the s */
       Uri uri = Uri.parse(transaction.getRedirectUrl());
-      Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-      activity.startActivity(intent);
+      CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder().build();
+      customTabsIntent.launchUrl(activity, uri);
     }
   }
 
